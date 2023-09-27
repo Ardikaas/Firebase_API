@@ -51,6 +51,15 @@ app.get('/:id', async(req, res) =>{
   }
 })
 
+app.delete('/delete/:id', async(req, res) =>{
+  try{
+    const users = db.collection('users').doc(req.params.id).delete()
+    res.send(users);
+  }catch(error){
+    console.log(error)
+  }
+})
+
 const port = 8080
 app.listen(port, ()=>{
   console.log(
