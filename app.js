@@ -27,6 +27,19 @@ app.post('/create', async(req, res) => {
   }
 })
 
+app.get('/', async(req, res) =>{
+  try{
+    const users = db.collection('users')
+    const response = await users.get();
+    const data = [];
+    response.forEach(doc => {
+      data.push(doc. data())
+    })
+    res.send(data);
+  }catch(error){
+    res.send(error)
+  }
+})
 
 const port = 8080
 app.listen(port, ()=>{
