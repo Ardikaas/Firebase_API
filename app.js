@@ -41,6 +41,16 @@ app.get('/', async(req, res) =>{
   }
 })
 
+app.get('/:id', async(req, res) =>{
+  try{
+    const users = db.collection('users').doc(req.params.id)
+    const data = await users.get();
+    res.send(data.data());
+  }catch(error){
+    console.log(error)
+  }
+})
+
 const port = 8080
 app.listen(port, ()=>{
   console.log(
