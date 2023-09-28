@@ -51,6 +51,20 @@ app.get('/:id', async(req, res) =>{
   }
 })
 
+app.post('/update', async(req, res) => {
+  try{
+    const id = req.body.id
+    const newFirstName = "udin"
+    const user = await db.collection('users').doc(id)
+    .update({
+      firstName: newFirstName
+    })
+    res.send(user)
+  }catch(error){
+    console.log(error)
+  }
+})
+
 app.delete('/delete/:id', async(req, res) =>{
   try{
     const users = db.collection('users').doc(req.params.id).delete()
