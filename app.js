@@ -1,6 +1,6 @@
 const express = require('express')
 const admin = require('firebase-admin')
-const key = require('./my-project-90c1b-firebase-adminsdk-7j9ss-c9c2af5b1c.json')
+const key = require('./key/my-project-90c1b-firebase-adminsdk-7j9ss-c9c2af5b1c.json')
 
 const app = express();
 

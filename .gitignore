@@ -1,6 +1,9 @@
 /node_modules
+/key
+
 
 .env
 
 /functions/node_modules
 /functions/.gitignore
+/functions/key
