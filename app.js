@@ -14,7 +14,6 @@ const db = admin.firestore();
 
 app.post('/create', async(req, res) => {
   try{
-    const id = req.body.email;
     const userJson = {
       email: req.body.email,
       firstName: req.body.firstName,
